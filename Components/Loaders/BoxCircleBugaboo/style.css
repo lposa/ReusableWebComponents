@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    background: #000;
+    width: 100%;
+    justify-content: center;
+    column-gap: 250px;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+
+.loader {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    animation: animateLoaded 10s linear infinite;
+}
+
+.loader:hover {
+    background: #03e9f4;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+}
+
+.loader span {
+    position: absolute;
+    display: block;
+}
+
+.loader span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s linear infinite;
+    animation-delay: 0s;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.loader span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.loader span:nth-child(3) {
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0s;
+}
+
+@keyframes animate3 {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.loader span:nth-child(4) {
+    bottom: 0;
+    left: 0;
+    top: 100%;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(0deg, transparent, #03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animate4 {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: -100%;
+    }
+}
+
+@keyframes animateLoaded {
+    0% {
+        background: none;
+        box-shadow: none;
+    }
+    100% {
+        background: #03e9f4;
+        box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+    }
+}
+
+
+/*circle*/
+
+.loader-container-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    border-radius: 50%;
+}
+
+.loader-circle-in {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    /*animation: animateLoaded 10s linear infinite;*/
+    border-radius: 50%;
+    animation: rotateIn 10s linear infinite;
+    z-index: 99;
+    border: 2px solid gainsoboro;
+}
+
+.loader-line {
+    width: 5px;
+    height: 250px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    animation: rotateLine 10s linear infinite;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes rotateLine {
+    0% {
+        transform: rotate(0deg);
+        background: none;
+    }
+    100% {
+        transform: rotate(-360deg);
+        background: white;
+    }
+}
+
+@keyframes rotateIn {
+    0% {
+        transform: rotate(0deg);
+        background: none;
+        box-shadow: none;
+    }
+    100% {
+        transform: rotate(360deg);
+        background: white;
+        box-shadow: 0 0 5px white, 0 0 25px white, 0 0 50px white, 0 0 200px white;
+    }
+}
+
+.bugaboo {
+    display: flex;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-self: center;
+}
+
+.circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: transparent;
+    animation: rotateLine 5s linear infinite;
+}
+
+.one {
+    bottom: 0;
+    align-self: center;
+    border: 7px solid white;
+}
+
+.two {
+    right: 0;
+    align-self: center;
+    border: 5px solid white;
+}
+
+.three {
+    left: 0;
+    top: 7%;
+    border: 4px solid white;
+}
+
+@keyframes bugaboo {
+    0% {
+        border: 7px solid linear-gradient(white, black);
+        transform: rotate(0deg);
+    }
+    100% {
+        border: 7px solid linear-gradient(white, black);
+        transform: rotate(360deg);
+    }
+}
